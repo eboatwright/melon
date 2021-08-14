@@ -6,7 +6,7 @@ func main() {
 	Start(&Game {
 		Title:     "Melon-GO - eboatwright",
 		Update:    func() {
-			if IsKeyDown(2) {
+			if IsKeyDown(KeySpace) {
 				x++
 			}
 		},

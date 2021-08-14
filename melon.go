@@ -1,4 +1,4 @@
-package melon
+package main
 
 
 import (
@@ -39,6 +39,7 @@ var (
 
 func render(w draw.Window) {
 	window = w
+	updateInput()
 	game.Update()
 	game.Draw()
 }

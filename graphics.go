@@ -1,4 +1,4 @@
-package main
+package melon
 
 
 import (
@@ -7,9 +7,9 @@ import (
 
 
 // Draws image from spritesheet.png
-func DrawImage(x, y, width, height, srcX, srcY int) {
+func DrawImage(path string, x, y, width, height, srcX, srcY int) {
 	window.DrawImageFilePart(
-		"spritesheet.png",
+		path,
 		srcX, srcY, width, height,
 		x * pIXEL_SIZE, y * pIXEL_SIZE, width * pIXEL_SIZE, height * pIXEL_SIZE,
 		0,
@@ -22,21 +22,29 @@ func DrawText(text string, x, y int, scale float32, color draw.Color) {
 }
 
 // Draws rect
-func DrawRect(x, y, width, height int, color draw.Color) {
-	window.FillRect(x * pIXEL_SIZE, y * pIXEL_SIZE, width * pIXEL_SIZE, height * pIXEL_SIZE, color)
+func DrawRect(x, y, width, height int, color draw.Color, filled bool) {
+	if filled {
+		window.FillRect(x * pIXEL_SIZE, y * pIXEL_SIZE, width * pIXEL_SIZE, height * pIXEL_SIZE, color)
+	} else {
+		window.DrawRect(x * pIXEL_SIZE, y * pIXEL_SIZE, width * pIXEL_SIZE, height * pIXEL_SIZE, color)
+	}
+}
+
+// Draws Ellipse either filled or outline
+func DrawEllipse(x, y, width, height int, color draw.Color, filled bool) {
+	if filled {
+		window.FillEllipse(x, y, width, height, color)
+	} else {
+		window.DrawEllipse(x, y, width, height, color)
+	}
+}
+
+// Draws line
+func DrawLine(x1, y1, x2, y2 int, color draw.Color) {
+	window.DrawLine(x1, y1, x2, y2, color)
 }
 
 // Basically just draws rect with requested color
 func Clear(color draw.Color) {
-	DrawRect(0, 0, 320, 200, color)
+	DrawRect(0, 0, 320, 200, color, true)
 }
-
-// Returns a draw.Color {}
-func Color(r, g, b, a float32) draw.Color {
-	return draw.Color { r, g, b, a }
-}
-
-var (
-	WHITE = Color(255, 255, 255, 255)
-	BLACK = Color(0, 0, 0, 255)
-)

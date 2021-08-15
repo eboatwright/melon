@@ -1,4 +1,4 @@
-package main
+package melon
 
 
 import (
@@ -29,7 +29,7 @@ func (v *Vector2) Normalize() {
 // Adds Vector2 and other (changes Vector2)
 func (v *Vector2) Add(other interface {}) {
 	t := reflect.TypeOf(other).String()
-	if t == "main.Vector2" {
+	if t == "melon.Vector2" {
 		otherVector := other.(Vector2)
 		v.X += otherVector.X
 		v.Y += otherVector.Y
@@ -45,7 +45,7 @@ func (v *Vector2) Add(other interface {}) {
 // Subtracts Vector2 and other (changes Vector2)
 func (v *Vector2) Subtract(other interface {}) {
 	t := reflect.TypeOf(other).String()
-	if t == "main.Vector2" {
+	if t == "melon.Vector2" {
 		otherVector := other.(Vector2)
 		v.X -= otherVector.X
 		v.Y -= otherVector.Y
@@ -61,7 +61,7 @@ func (v *Vector2) Subtract(other interface {}) {
 // Multiplies Vector2 and other (changes Vector2)
 func (v *Vector2) Multiply(other interface {}) {
 	t := reflect.TypeOf(other).String()
-	if t == "main.Vector2" {
+	if t == "melon.Vector2" {
 		otherVector := other.(Vector2)
 		v.X *= otherVector.X
 		v.Y *= otherVector.Y
@@ -77,7 +77,7 @@ func (v *Vector2) Multiply(other interface {}) {
 // Divides Vector2 and other (changes Vector2)
 func (v *Vector2) Divide(other interface {}) {
 	t := reflect.TypeOf(other).String()
-	if t == "main.Vector2" {
+	if t == "melon.Vector2" {
 		otherVector := other.(Vector2)
 		v.X /= otherVector.X
 		v.Y /= otherVector.Y
@@ -103,7 +103,7 @@ func Vector2Add(vector Vector2, other interface {}) Vector2 {
 	result := Vector2 { vector.X, vector.Y }
 
 	t := reflect.TypeOf(other).String()
-	if t == "main.Vector2" {
+	if t == "melon.Vector2" {
 		otherVector := other.(Vector2)
 		result.X += otherVector.X
 		result.Y += otherVector.Y
@@ -123,7 +123,7 @@ func Vector2Subtract(vector Vector2, other interface {}) Vector2 {
 	result := Vector2 { vector.X, vector.Y }
 
 	t := reflect.TypeOf(other).String()
-	if t == "main.Vector2" {
+	if t == "melon.Vector2" {
 		otherVector := other.(Vector2)
 		result.X -= otherVector.X
 		result.Y -= otherVector.Y
@@ -143,7 +143,7 @@ func Vector2Multiply(vector Vector2, other interface {}) Vector2 {
 	result := Vector2 { vector.X, vector.Y }
 
 	t := reflect.TypeOf(other).String()
-	if t == "main.Vector2" {
+	if t == "melon.Vector2" {
 		otherVector := other.(Vector2)
 		result.X *= otherVector.X
 		result.Y *= otherVector.Y
@@ -163,7 +163,7 @@ func Vector2Divide(vector Vector2, other interface {}) Vector2 {
 	result := Vector2 { vector.X, vector.Y }
 
 	t := reflect.TypeOf(other).String()
-	if t == "main.Vector2" {
+	if t == "melon.Vector2" {
 		otherVector := other.(Vector2)
 		result.X /= otherVector.X
 		result.Y /= otherVector.Y

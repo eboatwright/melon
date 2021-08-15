@@ -1,5 +1,5 @@
 # melon
- A Fantasy Console like Engine for gonutz's prototype framework!
+ A Simple Engine for gonutz's prototype Golang Framework!
 
 # Installation
 ```

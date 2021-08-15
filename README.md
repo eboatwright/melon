@@ -1,5 +1,5 @@
 # Melon
- A Simple Engine for gonutz's "prototype" GOlang Framework!
+ A Simple Engine for gonutz's "prototype" Golang Framework!
 
 # Installation
 ```

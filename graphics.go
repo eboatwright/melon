@@ -7,11 +7,11 @@ import (
 
 
 // Draws image from spritesheet.png
-func DrawImage(path string, x, y, width, height, srcX, srcY int) {
+func DrawImage(path string, x, y, width, height, srcX, srcY, srcWidth, srcHeight int) {
 	window.DrawImageFilePart(
 		path,
 		srcX, srcY, width, height,
-		x * pIXEL_SIZE, y * pIXEL_SIZE, width * pIXEL_SIZE, height * pIXEL_SIZE,
+		x * pIXEL_SIZE, y * pIXEL_SIZE, srcWidth * pIXEL_SIZE, srcHeight * pIXEL_SIZE,
 		0,
 	)
 }

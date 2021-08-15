@@ -90,6 +90,12 @@ func (v *Vector2) Divide(other interface {}) {
 	}
 }
 
+// Floors Vector2 (changes Vector2)
+func (v *Vector2) Vector2Floor() {
+	v.X = float64(int64(v.X))
+	v.Y = float64(int64(v.Y))
+}
+
 
 // Returns a copy of the Vector2 normalized (doesn't change Vector2)
 func Normalized(v Vector2) Vector2 {

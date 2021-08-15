@@ -9,4 +9,4 @@ go get github.com/eboatwright/melon@{LATEST_STABLE_VERSION}
 
 # Documentation
  API Reference: pkg.go.dev/github.com/eboatwright/melon
- No tutorials yet :frowning:
+ No tutorials yet ☹️

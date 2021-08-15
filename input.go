@@ -61,6 +61,27 @@ func GetMousePosition() (x, y int) {
 	return window.MousePosition()
 }
 
+// Returns an integer and is -1 if one of the negative keys specified is pressed, and returns 1 if any of the positive keys specified is pressed. Returns 0 if both or none are pressed.
+func GetInputAxis(negative, positive []Key) int {
+	result := 0
+
+	for _, key := range negative {
+		if IsKeyDown(key) {
+			result -= 1
+			break
+		}
+	}
+
+	for _, key := range positive {
+		if IsKeyDown(key) {
+			result += 1
+			break
+		}
+	}
+
+	return result
+}
+
 
 // I copied these from prototype, so you don't have to import 2 things in your files :)
 type Key int

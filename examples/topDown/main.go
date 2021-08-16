@@ -38,7 +38,7 @@ func main() {
 			if playerDir == -1 {
 				playerOffset = 9
 			}
-			melon.DrawImage("data/img/player.png", int(playerPos.X) + playerOffset, int(playerPos.Y), 9, 14, 0, 0, 9 * playerDir, 14)
+			melon.DrawImage("data/img/player.png", int(playerPos.X), int(playerPos.Y), 9, 14, playerOffset, 0, 9 * playerDir, 14)
 		},
 	})
 }
